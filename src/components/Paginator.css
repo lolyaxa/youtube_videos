@@ -1,0 +1,16 @@
+.Page {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px;
+    border: 1px solid gray;
+  }
+
+.Pages {
+    text-align: center;
+}
+
+.Active {
+  background-color: rgba(186, 204, 201, 0.904);
+}

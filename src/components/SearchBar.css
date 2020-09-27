@@ -1,0 +1,17 @@
+.Bar {
+    position: relative;
+    width: 800px;
+    height: 70px;
+    left: 25px;
+    top: 25px;
+}
+
+.Input {
+    width: 500px;
+    height: 30px;
+}
+
+.SearchButton {
+    height: 36px;
+    background-color: rgba(191, 207, 207, 0.938);
+}
