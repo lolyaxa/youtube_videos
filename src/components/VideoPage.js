@@ -2,6 +2,7 @@ import "./VideoPage.css";
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import createBrowserHistory from "history/createBrowserHistory";
+import { API_KEY } from "../constants";
 
 const history = createBrowserHistory();
 
@@ -12,7 +13,7 @@ function RepositoryPage() {
   useEffect(() => {
     async function f() {
       const responses = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&id=${id}`
+        `https://www.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&key=${API_KEY}&id=${id}`
       );
       let commits = await responses.json();
       console.log(id);

@@ -4,6 +4,7 @@ import { Paginator } from "./Paginator";
 import { SearchBar } from "./SearchBar";
 import { NavLink } from "react-router-dom";
 import createBrowserHistory from "history/createBrowserHistory";
+import { API_KEY } from "../constants";
 
 const history = createBrowserHistory();
 const localStorage = [];
@@ -15,8 +16,7 @@ function Home() {
   const isLoading = response === undefined;
   useEffect(() => {
     async function f() {
-      let url =
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&q=";
+      let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${API_KEY}&q=`;
       if (inputValue === "") {
         url += "обзор%20игры%20метрон";
       } else {
@@ -63,7 +63,7 @@ function Home() {
           value={inputValue}
           onSearchClick={() => {
             async function f() {
-              let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&q=${inputValue}`;
+              let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${API_KEY}&q=${inputValue}`;
               let responses = await fetch(url);
               let commits = await responses.json();
               setResponse(commits.items);
@@ -79,7 +79,7 @@ function Home() {
               <div
                 onClick={() => {
                   async function f() {
-                    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&q=${a}`;
+                    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${API_KEY}&q=${a}`;
                     let responses = await fetch(url);
                     let commits = await responses.json();
                     setResponse(commits.items);
