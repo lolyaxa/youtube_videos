@@ -62,24 +62,31 @@ function Home() {
                   setResponse(commits.items);
                 }
                 f();
-                CashArr.push(
-                <div onClick={() => {
-                  async function f() {
-                    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&q=${inputValue}`;
-                    let responses = await fetch(url);
-                    let commits = await responses.json();
-                    setResponse(commits.items);
-                }
-                f();
-                setInputValue(inputValue);
-                }}
-                >{inputValue}</div>
-                );
+                CashArr.push(inputValue);
               }}
             />
 
             <div className='SearchHistory'>
-              {CashArr}
+              {CashArr.map(function(a) {
+                return <div
+                  onClick={() =>
+                    {
+                      async function f() {
+                        let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=AIzaSyDxDqDp328CXFtTj6XYVwIa4WKUH-YT6UI&q=${a}`;
+                        let responses = await fetch(url);
+                        let commits = await responses.json();
+                        setResponse(commits.items);
+                      }
+                    f();
+                    setInputValue(a);
+                    for(var i = CashArr.length - 1; i >= 0; i--) {
+                      if(CashArr[i] === a) {
+                         CashArr.splice(i, 1);
+                      }
+                    }
+                    CashArr.unshift(a);
+                    }}>{a}</div>
+              })}
             </div>
 
             <div>{videoList}</div>
