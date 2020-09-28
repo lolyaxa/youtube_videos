@@ -16,7 +16,7 @@ function Home() {
   const isLoading = response === undefined;
   useEffect(() => {
     async function f() {
-      let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${API_KEY}&q=`;
+      let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&key=${API_KEY}&q=`;
       if (inputValue === "") {
         url += "обзор%20игры%20метрон";
       } else {
@@ -63,7 +63,7 @@ function Home() {
           value={inputValue}
           onSearchClick={() => {
             async function f() {
-              let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${API_KEY}&q=${inputValue}`;
+              let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=video&key=${API_KEY}&q=${inputValue}`;
               let responses = await fetch(url);
               let commits = await responses.json();
               setResponse(commits.items);
