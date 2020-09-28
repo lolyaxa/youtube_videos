@@ -34,7 +34,7 @@ function Home() {
     let videoArr = response.slice((activePage - 1) * 10, activePage * 10 - 1);
     for (let i in videoArr) {
       videoList.push(
-        <li>
+        <li className="VideoLink">
           <NavLink to={`/video/${videoArr[i].id.videoId}`}>
             <div className="VideoButton">
               <img

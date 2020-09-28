@@ -12,16 +12,16 @@ const SearchButton = styled.button`
 
 const Bar = styled.div`
   position: relative;
-  width: 800px;
   height: 70px;
-  left: 25px;
+  width: 90%;
+  left: 2%;
   top: 25px;
 `;
 
 const Input = styled.input`
-  width: 500px;
   height: 30px;
   font-size: 16px;
+  width: 50%;
 `;
 
 function SearchBar(props) {

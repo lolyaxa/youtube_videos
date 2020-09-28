@@ -1,39 +1,41 @@
 .VideoButton {
-    position: relative;
-    margin: 10px;
-    padding: 6px;
-    border-radius: 10px;
-    width: 800px;
-    height: 250px;
-    background-color: rgba(219, 218, 203, 0.705);
-  }
+  position: relative;
+  margin: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: rgba(219, 218, 203, 0.705);
+}
 
-  .VideoPreview {
-    position: relative;
-  }
-  
-  
-  .VideoTitle {
-    position: relative;
-  }
-  
-  .ChannelTitle {
-    position: relative;
-  }
-  
-  .Description {
-    position: relative;
-    top: -3%;
-    left: 1%;
-  }
+.VideoPreview {
+  position: relative;
+  width: 90%;
+}
 
-  .Error {
-    position: absolute;
-    background-color: rgba(209, 18, 18, 0.685);
-    background-size: cover;
-    left: 30%;
-    top: 30%;
-    margin: 10px;
-    padding: 60px;
-    border-radius: 10px;
-  }
+.VideoLink {
+  display: block;
+}
+
+.VideoTitle {
+  position: relative;
+}
+
+.ChannelTitle {
+  position: relative;
+}
+
+.Description {
+  position: relative;
+  top: -3%;
+  left: 1%;
+}
+
+.Error {
+  position: absolute;
+  background-color: rgba(209, 18, 18, 0.685);
+  background-size: cover;
+  left: 30%;
+  top: 30%;
+  margin: 10px;
+  padding: 60px;
+  border-radius: 10px;
+}
